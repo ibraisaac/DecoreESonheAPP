@@ -6,6 +6,12 @@ namespace DecoreESonheAPP.Data
 {
     public class ApplicationContext : DbContext
     {
+        public ApplicationContext(DbContextOptions options)
+            : base(options)
+        {
+
+        }
+
         public DbSet<Pedido> Pedidos { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Produto> Produtos { get; set; }
