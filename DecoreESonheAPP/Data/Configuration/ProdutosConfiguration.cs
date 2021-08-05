@@ -13,7 +13,7 @@ namespace DecoreESonheAPP.Data.Configurations
             builder.Property(c => c.Codigo).HasColumnType("Varchar(20)").IsRequired();
             builder.Property(c => c.Descricao).HasColumnType("varchar(50)").IsRequired();
             builder.Property(c => c.Preco).HasColumnType("decimal(18,2)").IsRequired();
-            builder.Property(c => c.IdTipoProduto).HasColumnType("int").IsRequired();
+            //builder.Property(c => c.TipoProduto).HasColumnType("int").IsRequired();
 
         }
     }

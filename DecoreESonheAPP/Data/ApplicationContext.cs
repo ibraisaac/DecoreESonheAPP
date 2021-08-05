@@ -21,7 +21,7 @@ namespace DecoreESonheAPP.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             // Informar qual é o provider a utilizar
-            string stringConnection = "Server=.\\SQLEXPRESS;Database=DecoreeSonheAPP;User=sa;Password=abcd.1234;ConnectRetryCount=0;MultipleActiveResultSets=true";
+            string stringConnection = "Server=.;Database=DecoreeSonheAPP;User=sa;Password=abcd.1234;ConnectRetryCount=0;MultipleActiveResultSets=true";
             optionsBuilder
                 .UseSqlServer(stringConnection,
                     p => p.EnableRetryOnFailure(

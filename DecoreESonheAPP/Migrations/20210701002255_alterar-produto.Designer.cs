@@ -4,14 +4,16 @@ using DecoreESonheAPP.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DecoreESonheAPP.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20210701002255_alterar-produto")]
+    partial class alterarproduto
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -74,6 +76,7 @@ namespace DecoreESonheAPP.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("CanalVenda")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("ClienteIdentificador")
@@ -82,10 +85,10 @@ namespace DecoreESonheAPP.Migrations
                     b.Property<int>("Codigo")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("DataEntrega")
+                    b.Property<DateTime>("DataEntrega")
                         .HasColumnType("Date");
 
-                    b.Property<DateTime?>("DataPagamento")
+                    b.Property<DateTime>("DataPagamento")
                         .HasColumnType("Date");
 
                     b.Property<DateTime>("DataPedido")
@@ -104,9 +107,11 @@ namespace DecoreESonheAPP.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TipoEntrega")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TipoPagamento")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Identificador");

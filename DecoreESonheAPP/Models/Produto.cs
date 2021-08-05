@@ -12,8 +12,6 @@ namespace DecoreESonheAPP.Models
         public string Descricao { get; set; }
         public decimal Preco { get; set; }
         public bool Ativo { get; set; }
-        public int IdTipoProduto { get; set; }
-
         public TipoProduto TipoProduto { get; set; }
     }
 }
